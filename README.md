@@ -6,7 +6,7 @@
 ## gradle 添加依赖
 
 ```
-implementation 'com.liulishuo:pt:1.0.0'
+implementation 'com.liulishuo:pt:1.0.1'
 
 ```
 

@@ -31,11 +31,17 @@ public class MainActivity extends AppCompatActivity implements PTResultCallback 
 
     @Override
     public void onSuccess(PTResult result) {
-        new AlertDialog.Builder(this)
-                .setMessage(
-                    String.format(" fluency = %s\n level = %d\n levelDescription = %s\n pronunciation = %s\n",
-                        result.getFluency(), result.getLevel(), result.getLevelDescription(), result.getPronunciation())
-                ).create().show();
+        String report = String.format(
+                        "score = %d\n"
+                        + "fluency = %s\n"
+                        + "level = %d\n"
+                        + "levelDescription = %s\n"
+                        + "pronunciation = %s\n"
+                        + "rawReport = %s",
+                result.getScore(), result.getFluency(), result.getLevel(),
+                result.getLevelDescription(), result.getPronunciation(),
+                result.getRawReport());
+        new AlertDialog.Builder(this).setMessage(report).create().show();
     }
 
     @Override
